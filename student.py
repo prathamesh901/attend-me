@@ -185,7 +185,7 @@ class Student:
         teacher_entry.grid(row=4,column=3,padx=10,pady=5,sticky=W)
 
 
-
+        #radiobuttons
         self.var_radio1=StringVar()
         Radiobtn1=ttk.Radiobutton(class_student_frame,variable=self.var_radio1,text="Take photo sample",value="yes")
         Radiobtn1.grid(row=6,column=0)
@@ -195,7 +195,9 @@ class Student:
         btn_frame=Frame(class_student_frame,bd=2,relief=RIDGE,bg="white")
         btn_frame.place(x=0,y=210,width=770,height=35)
 
-        save_btn=Button(btn_frame,text="Save",font=("times new roman",13,"bold"),bg="blue",fg="white",width=18)
+
+
+        save_btn=Button(btn_frame,text="Save",command=self.add_data,font=("times new roman",13,"bold"),bg="blue",fg="white",width=18)
         save_btn.grid(row=0,column=0)
 
         update_btn=Button(btn_frame,text="Update",font=("times new roman",13,"bold"),bg="blue",fg="white",width=19)
@@ -299,6 +301,44 @@ class Student:
         self.student_table.pack(fill=BOTH,expand=1) 
         # self.student_table.bind("<ButtonRelease>",self.get_cursor)
         # self.fetch_data()
+
+        # ========================Functon Declaration======================
+
+    def add_data(self):
+        if self.var_dep.get()=="select Department" or self.var_std_name.get()=="" or self.var_std_id.get()=="":
+            messagebox.showerror("Error","All fields are required",parent=self.root)
+        else:
+            pass
+            
+            # try:
+            #    conn=mysql.connector.connect(host="localhost",username="root",password="Aj612001",database="face_recognizer")
+            #    my_cursor=conn.cursor()
+            #    my_cursor.execute("insert into student values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
+            #                                                                                                 self.var_dep.get(),
+            #                                                                                                 self.var_course.get(),
+            #                                                                                                 self.var_year.get(),
+            #                                                                                                 self.var_semester.get(),
+            #                                                                                                 self.var_std_id.get(),
+            #                                                                                                 self.var_std_name.get(),
+            #                                                                                                 self.var_div.get(),
+            #                                                                                                 self.var_roll.get(),
+            #                                                                                                 self.var_gender.get(),
+            #                                                                                                 self.var_dob.get(),
+            #                                                                                                 self.var_email.get(),
+            #                                                                                                 self.var_phone.get(),
+            #                                                                                                 self.var_address.get(),
+            #                                                                                                 self.var_teacher.get(),
+            #                                                                                                 self.var_radio1.get()
+                                                                                                        
+            #                                                                                            ))
+
+            #    conn.commit()  
+            #    self.fetch_data()
+            #    conn.close() 
+            #    messagebox.showinfo("Success","Student details has been added Successfully",parent=self.root)                                                                            
+            # except Exception as es:
+            #     messagebox.showerror("Error",f"Due To :{str(es)}",parent=self.root)  
+
 
 
 

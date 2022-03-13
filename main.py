@@ -6,12 +6,12 @@ import tkinter
 import os
 from time import strftime
 from datetime import datetime
-# from student import Student
-# from train import Train
-# from face_recognition import Face_Recognition
-# from attendance import Attendance
-# from developer import Developer
-# from help import Help
+from student import Student
+from train import Train
+from face_recognition import Face_Recognition
+from attendance import Attendance
+from developer import Developer
+from help import Help
 # from chatbot import ChatBot
 
 class Face_Recognition_System:
