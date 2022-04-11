@@ -2,10 +2,10 @@ from tkinter import*
 from tkinter import ttk
 from PIL import Image,ImageTk
 from tkinter import messagebox
-# import mysql.connector
-# import cv2
+import mysql.connector
+import cv2
 import os
-# import numpy as np
+import numpy as np
 
 class Train:
     def __init__(self,root):
@@ -43,7 +43,7 @@ class Train:
         for image in path:
             img=Image.open(image).convert('L') #gray scale image
             imageNp=np.array(img,'uint8')
-            id=int(os.path.split(image)[1].split('.')[1])
+            id=int(os.path.split(image)[1].split('.')[2])
                 
             faces.append(imageNp)
             ids.append(id)
