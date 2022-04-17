@@ -2,12 +2,12 @@ from tkinter import*
 from tkinter import ttk
 from PIL import Image,ImageTk
 from tkinter import messagebox
-# import mysql.connector
+import mysql.connector
 from time import strftime
 from datetime import datetime
-# import cv2
+import cv2
 import os
-# import numpy as np
+import numpy as np
 
 
 class Face_Recognition:
@@ -33,22 +33,22 @@ class Face_Recognition:
         f_lbl=Label(self.root,image=self.photoimg_right)
         f_lbl.place(x=650,y=55,width=950,height=700)
 
-        b1_1=Button(f_lbl,text="Face Recognition",cursor="hand2",font=("times new roman",18,"bold"),bg="red",fg="white")
+        b1_1=Button(f_lbl,text="Face Recognition",command=self.face_recog,cursor="hand2",font=("times new roman",18,"bold"),bg="red",fg="white")
         b1_1.place(x=370,y=620,width=200,height=40)
 
         #============================attendamce=============
-    def mark_attendance(self,i,r,n,d):
-        with open("ajinkya.csv","r+",newline="\n") as f:
-            myDataList=f.readlines()
-            name_list=[]
-            for line in myDataList:
-                entry=line.split((","))
-                name_list.append(entry[0])
-            if((i not in name_list) and (r not in name_list) and (n not in name_list) and (d not in name_list)):
-                now=datetime.now()
-                d1=now.strftime("%d/%m/%Y")
-                dtString=now.strftime("%H:%M:%S")
-                f.writelines(f"\n{i},{r},{n},{d},{dtString},{d1},preset")
+    # def mark_attendance(self,i,r,n,d):
+    #     with open("prathamesh.csv","r+",newline="\n") as f:
+    #         myDataList=f.readlines()
+    #         name_list=[]
+    #         for line in myDataList:
+    #             entry=line.split((","))
+    #             name_list.append(entry[0])
+    #         if((i not in name_list) and (r not in name_list) and (n not in name_list) and (d not in name_list)):
+    #             now=datetime.now()
+    #             d1=now.strftime("%d/%m/%Y")
+    #             dtString=now.strftime("%H:%M:%S")
+    #             f.writelines(f"\n{i},{r},{n},{d},{dtString},{d1},preset")
 
 
 
@@ -67,7 +67,7 @@ class Face_Recognition:
                 id,predict=clf.predict(gray_image[y:y+h,x:x+w])
                 confidence=int((100*(1-predict/300)))
 
-                conn=mysql.connector.connect(host="localhost",username="root",password="Aj612001",database="face_recognizer")
+                conn=mysql.connector.connect(host="localhost",username="root",password="Bvit@2002",database="face_recognizer")
                 my_cursor=conn.cursor()
 
                 my_cursor.execute("select Name from student where Student_id="+str(id))
@@ -127,3 +127,5 @@ if __name__== "__main__":
     root=Tk()
     obj=Face_Recognition(root)
     root.mainloop()
+
+    

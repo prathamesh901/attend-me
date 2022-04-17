@@ -1,4 +1,3 @@
-
 from tkinter import*
 from tkinter import ttk
 from PIL import Image,ImageTk
@@ -12,13 +11,13 @@ from face_recognition import Face_Recognition
 from attendance import Attendance
 from developer import Developer
 from help import Help
-# from chatbot import ChatBot
+
 
 class Face_Recognition_System:
     def __init__(self,root):
         self.root=root 
         self.root.geometry("1530x790+0+0")
-        self.root.title("Face Recognition System")
+      
         # #first img
         # img=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg.jpg")
         # img=img.resize((1700,3330),Image.ANTIALIAS)
@@ -109,7 +108,7 @@ class Face_Recognition_System:
         b1_1=Button(bg_img,text="Help Desk",cursor="hand2",command=self.help_data,font=("times new roman",15,"bold"),bg="black",fg="white")
         b1_1.place(x=1200,y=400,width=220,height=40)
         #Train Data
-        img8=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\td2.jfif")
+        img8=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\attendance.jpg")
         img8=img8.resize((220,220),Image.ANTIALIAS)
         self.photoimg8=ImageTk.PhotoImage(img8)
 
@@ -156,7 +155,7 @@ class Face_Recognition_System:
         os.startfile("data")   
 
     def exit(self):
-        self.exit=tkinter.messagebox.askyesno("face recognition","Are you sure exit this project",parent=self.root)
+        self.exit=tkinter.messagebox.askyesno("face recognition","Are you sure to exit ",parent=self.root)
         if self.exit > 0:
             self.root.destroy()
         else:
@@ -192,11 +191,7 @@ class Face_Recognition_System:
         self.app=Help( self.new_window)
 
 
-    # def cahatbot(self):
-    #     self.new_window=Toplevel(self.root)
-    #     self.app=ChatBot(self.new_window)
-
-
+    
 
 
     

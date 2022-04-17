@@ -2,8 +2,8 @@ from tkinter import*
 from tkinter import ttk
 from PIL import Image,ImageTk
 from tkinter import messagebox
-# import mysql.connector
-# import cv2
+import mysql.connector
+import cv2
 import os
 import csv
 from tkinter import filedialog
@@ -211,3 +211,7 @@ if __name__== "__main__":
     root=Tk()
     obj=Attendance(root)
     root.mainloop()
+
+
+
+
