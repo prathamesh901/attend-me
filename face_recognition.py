@@ -37,18 +37,18 @@ class Face_Recognition:
         b1_1.place(x=370,y=620,width=200,height=40)
 
         #============================attendamce=============
-    # def mark_attendance(self,i,r,n,d):
-    #     with open("prathamesh.csv","r+",newline="\n") as f:
-    #         myDataList=f.readlines()
-    #         name_list=[]
-    #         for line in myDataList:
-    #             entry=line.split((","))
-    #             name_list.append(entry[0])
-    #         if((i not in name_list) and (r not in name_list) and (n not in name_list) and (d not in name_list)):
-    #             now=datetime.now()
-    #             d1=now.strftime("%d/%m/%Y")
-    #             dtString=now.strftime("%H:%M:%S")
-    #             f.writelines(f"\n{i},{r},{n},{d},{dtString},{d1},preset")
+    def mark_attendance(self,i,r,n,d):
+        with open("ajinkya.csv","r+",newline="\n") as f:
+            myDataList=f.readlines()
+            name_list=[]
+            for line in myDataList:
+                entry=line.split((","))
+                name_list.append(entry[0])
+            if((i not in name_list) and (r not in name_list) and (n not in name_list) and (d not in name_list)):
+                now=datetime.now()
+                d1=now.strftime("%d/%m/%Y")
+                dtString=now.strftime("%H:%M:%S")
+                f.writelines(f"\n{i},{r},{n},{d},{dtString},{d1},preset")
 
 
 
@@ -104,8 +104,8 @@ class Face_Recognition:
             return coord
 
         def recognize(img,clf,faceCascade):
-            coord=draw_boundry(img,faceCascade,1.1,10,(255,25,255),"Face",clf)
-            return img
+             coord=draw_boundry(img,faceCascade,1.1,10,(255,25,255),"Face",clf)
+             return img
 
         faceCascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
         clf=cv2.face.LBPHFaceRecognizer_create()
@@ -127,5 +127,3 @@ if __name__== "__main__":
     root=Tk()
     obj=Face_Recognition(root)
     root.mainloop()
-
-    
