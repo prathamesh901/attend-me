@@ -34,30 +34,30 @@ class login_window:
         get_str.place(x=95,y=100)
 
         username_lbl=Label(frame,text="Username",font=("times new roman",20,"bold"),fg="white",bg="black")
-        username_lbl.place(x=70,y=155)
+        username_lbl.place(x=40,y=155)
 
         self.txtuser=ttk.Entry(frame,font=("times new roman",17,"bold"))
         self.txtuser.place(x=40,y=190,width=270)
 
         password_lbl=Label(frame,text="Password",font=("times new roman",20,"bold"),fg="white",bg="black")
-        password_lbl.place(x=70,y=245)
+        password_lbl.place(x=40,y=245)
 
 
         self.txtpass=ttk.Entry(frame,font=("times new roman",17,"bold"))
         self.txtpass.place(x=40,y=280,width=270)
         self.txtpass.config(show="*")
 
-        img2=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
-        img2=img2.resize((25,25),Image.ANTIALIAS)
-        self.photoimage2=ImageTk.PhotoImage(img2)
-        lblimg1=Label(image=self.photoimage2,bg="black",borderwidth=0)
-        lblimg1.place(x=650,y=333,width=25,height=25)
+        # img2=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        # img2=img2.resize((25,25),Image.ANTIALIAS)
+        # self.photoimage2=ImageTk.PhotoImage(img2)
+        # lblimg1=Label(image=self.photoimage2,bg="black",borderwidth=0)
+        # lblimg1.place(x=650,y=333,width=25,height=25)
 
-        img3=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
-        img3=img3.resize((25,25),Image.ANTIALIAS)
-        self.photoimage3=ImageTk.PhotoImage(img3)
-        lblimg1=Label(image=self.photoimage3,bg="black",borderwidth=0)
-        lblimg1.place(x=650,y=423,width=25,height=25)
+        # img3=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        # img3=img3.resize((25,25),Image.ANTIALIAS)
+        # self.photoimage3=ImageTk.PhotoImage(img3)
+        # lblimg1=Label(image=self.photoimage3,bg="black",borderwidth=0)
+        # lblimg1.place(x=650,y=423,width=25,height=25)
 
         loginbtn=Button(frame,command=self.login,text="Login",font=("times new roman",18,"bold"),bd=3,relief=RIDGE,fg="white",bg="red",activeforeground="white",activebackground="red")
         loginbtn.place(x=110,y=330,width=120,height=43)
@@ -106,7 +106,7 @@ class login_window:
         elif self.txt_newpass.get()=="":
             messagebox.showerror("Error","Please enter the new password",parent=self.root2)
         else:
-            conn=mysql.connector.connect(host="localhost",username="root",password="Aj612001",database="face_recognizer")
+            conn=mysql.connector.connect(host="localhost",username="root",password="Bvit@2002",database="face_recognizer")
             my_cursor=conn.cursor()
             qury=("select * from register where email=%s and securityq=%s and securityA=%s")
             value=(self.txtuser.get(),self.combo_security_q.get(),self.txt_security.get(),)

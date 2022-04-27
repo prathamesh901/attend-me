@@ -19,26 +19,35 @@ class Face_Recognition:
         title_lbl=Label(self.root,text="FACE RECOGNITION",font=("times new roman",35,"bold"),bg="white",fg="darkblue")
         title_lbl.place(x=0,y=0,width=1530,height=45)
 
-        img_left=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
-        img_left=img_left.resize((650,700),Image.ANTIALIAS)
-        self.photoimg_left=ImageTk.PhotoImage(img_left)
+        # img_left=Image.open("images\\bg2.jpg")
+        # img_left=img_left.resize((650,700),Image.ANTIALIAS)
+        # self.photoimg_left=ImageTk.PhotoImage(img_left)
 
-        f_lbl=Label(self.root,image=self.photoimg_left)
-        f_lbl.place(x=0,y=55,width=650,height=700)
+        # f_lbl=Label(self.root,image=self.photoimg_left)
+        # f_lbl.place(x=0,y=55,width=650,height=700)
 
-        img_right=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
-        img_right=img_right.resize((950,700),Image.ANTIALIAS)
-        self.photoimg_right=ImageTk.PhotoImage(img_right)
+        # img_right=Image.open("images\\bg2.jpg")
+        # img_right=img_right.resize((950,700),Image.ANTIALIAS)
+        # self.photoimg_right=ImageTk.PhotoImage(img_right)
 
-        f_lbl=Label(self.root,image=self.photoimg_right)
-        f_lbl.place(x=650,y=55,width=950,height=700)
+        # f_lbl=Label(self.root,image=self.photoimg_right)
+        # f_lbl.place(x=650,y=55,width=950,height=700)
+
+        img_top=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        img_top=img_top.resize((1500,800),Image.ANTIALIAS)
+        self.photoimg_top=ImageTk.PhotoImage(img_top)
+
+        f_lbl=Label(self.root,image=self.photoimg_top)
+        f_lbl.place(x=0,y=0,width=1530,height=800)
+
+
 
         b1_1=Button(f_lbl,text="Face Recognition",command=self.face_recog,cursor="hand2",font=("times new roman",18,"bold"),bg="red",fg="white")
-        b1_1.place(x=370,y=620,width=200,height=40)
+        b1_1.place(x=550,y=420,width=400,height=50)
 
         #============================attendamce=============
     def mark_attendance(self,i,r,n,d):
-        with open("ajinkya.csv","r+",newline="\n") as f:
+        with open("Bvit.csv","r+",newline="\n") as f:
             myDataList=f.readlines()
             name_list=[]
             for line in myDataList:
@@ -104,8 +113,8 @@ class Face_Recognition:
             return coord
 
         def recognize(img,clf,faceCascade):
-             coord=draw_boundry(img,faceCascade,1.1,10,(255,25,255),"Face",clf)
-             return img
+            coord=draw_boundry(img,faceCascade,1.1,10,(255,25,255),"Face",clf)
+            return img
 
         faceCascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
         clf=cv2.face.LBPHFaceRecognizer_create()

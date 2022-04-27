@@ -5,6 +5,8 @@ import tkinter
 import os
 from time import strftime
 from datetime import datetime
+
+from click import command
 from student import Student
 from train import Train
 from face_recognition import Face_Recognition
@@ -19,28 +21,28 @@ class Face_Recognition_System:
         self.root.geometry("1530x790+0+0")
       
         # #first img
-        # img=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg.jpg")
+        # img=Image.open("images\\bg.jpg")
         # img=img.resize((1700,3330),Image.ANTIALIAS)
         # self.photoimg=ImageTk.PhotoImage(img)
         
         # f_lbl=Label(self.root,image=self.photoimg)
         # f_lbl.place(x=0,y=0,width=1530,height=710)
         # #second img
-        # img1=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg.jpg")
+        # img1=Image.open("images\\bg.jpg")
         # img1=img1.resize((500,130),Image.ANTIALIAS)
         # self.photoimg1=ImageTk.PhotoImage(img1)
 
         # f_lbl=Label(self.root,image=self.photoimg1)
         # f_lbl.place(x=500,y=0,width=500,height=130)
         # #third img
-        # img2=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg.jpg")
+        # img2=Image.open("images\\bg.jpg")
         # img2=img2.resize((500,130),Image.ANTIALIAS)
         # self.photoimg2=ImageTk.PhotoImage(img2)
 
         # f_lbl=Label(self.root,image=self.photoimg2)
         # f_lbl.place(x=1000,y=0,width=500,height=130)
         #baground img
-        img3=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        img3=Image.open("images\\bg2.jpg")
         img3=img3.resize((1500,800),Image.ANTIALIAS)
         self.photoimg3=ImageTk.PhotoImage(img3)
 
@@ -59,7 +61,7 @@ class Face_Recognition_System:
         lbl.place(x=20,y=0,width=110,height=50)
         time()
         
-        # img_chat=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\face2.jpg")
+        # img_chat=Image.open("images\\face2.jpg")
         # img_chat=img_chat.resize((110,50),Image.ANTIALIAS)
         # self.photoimg_chat=ImageTk.PhotoImage(img_chat)
         # bchat=Button(title_lbl,image=self.photoimg_chat,cursor="hand2",command=self.cahatbot)
@@ -67,7 +69,7 @@ class Face_Recognition_System:
         
 
         #student button
-        img4=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\sd1.jpg")
+        img4=Image.open("images\\sd1.jpg")
         img4=img4.resize((220,220),Image.ANTIALIAS)
         self.photoimg4=ImageTk.PhotoImage(img4)
 
@@ -77,7 +79,7 @@ class Face_Recognition_System:
         b1_1=Button(bg_img,text="Student Details",cursor="hand2",command=self.student_details,font=("times new roman",15,"bold"),bg="black",fg="white")
         b1_1.place(x=300,y=400,width=220,height=40)
         #detect face
-        img5=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\traindata1.png")
+        img5=Image.open("images\\traindata1.png")
         img5=img5.resize((220,220),Image.ANTIALIAS)
         self.photoimg5=ImageTk.PhotoImage(img5)
 
@@ -88,7 +90,7 @@ class Face_Recognition_System:
         b1_1.place(x=600,y=400,width=220,height=40)
 
         #Attendance
-        img6=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\attendance.jpg")
+        img6=Image.open("images\\at1.png")
         img6=img6.resize((220,220),Image.ANTIALIAS)
         self.photoimg6=ImageTk.PhotoImage(img6)
 
@@ -98,7 +100,7 @@ class Face_Recognition_System:
         b1_1=Button(bg_img,text="Attendance",cursor="hand2",command=self.attendance_data,font=("times new roman",15,"bold"),bg="black",fg="white")
         b1_1.place(x=900,y=400,width=220,height=40)
         #Help Desk
-        img7=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\help1.jpg")
+        img7=Image.open("images\\help1.jpg")
         img7=img7.resize((200,200),Image.ANTIALIAS)
         self.photoimg7=ImageTk.PhotoImage(img7)
 
@@ -108,7 +110,7 @@ class Face_Recognition_System:
         b1_1=Button(bg_img,text="Help Desk",cursor="hand2",command=self.help_data,font=("times new roman",15,"bold"),bg="black",fg="white")
         b1_1.place(x=1200,y=400,width=220,height=40)
         #Train Data
-        img8=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\attendance.jpg")
+        img8=Image.open("images\\attendance.jpg")
         img8=img8.resize((220,220),Image.ANTIALIAS)
         self.photoimg8=ImageTk.PhotoImage(img8)
 
@@ -119,18 +121,18 @@ class Face_Recognition_System:
         b1_1.place(x=300,y=700,width=220,height=40)
  
         #Photos
-        img9=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\photo1.jpg")
+        img9=Image.open("images\\photo1.jpg")
         img9=img9.resize((220,220),Image.ANTIALIAS)
         self.photoimg9=ImageTk.PhotoImage(img9)
 
-        b1=Button(bg_img,image=self.photoimg9,cursor="hand2")
+        b1=Button(bg_img,image=self.photoimg9,cursor="hand2",command=self.open_img)
         b1.place(x=600,y=480,width=220,height=220)
 
-        b1_1=Button(bg_img,text="Photos",cursor="hand2",font=("times new roman",15,"bold"),bg="black",fg="white")
+        b1_1=Button(bg_img,text="Photos",cursor="hand2",command=self.open_img,font=("times new roman",15,"bold"),bg="black",fg="white")
         b1_1.place(x=600,y=700,width=220,height=40)
 
         #Devloper
-        img10=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\dev3.png")
+        img10=Image.open("images\\dev3.png")
         img10=img10.resize((220,220),Image.ANTIALIAS)
         self.photoimg10=ImageTk.PhotoImage(img10)
 
@@ -141,7 +143,7 @@ class Face_Recognition_System:
         b1_1.place(x=900,y=700,width=220,height=40)
 
         #Exit
-        img11=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\exit1.png")
+        img11=Image.open("images\\exit1.png")
         img11=img11.resize((220,220),Image.ANTIALIAS)
         self.photoimg11=ImageTk.PhotoImage(img11)
 
@@ -177,6 +179,7 @@ class Face_Recognition_System:
         self.new_window=Toplevel(self.root)
         self.app=Face_Recognition( self.new_window)
 
+    
     def attendance_data(self):
         self.new_window=Toplevel(self.root)
         self.app=Attendance( self.new_window)

@@ -23,35 +23,35 @@ class Attendance:
         self.var_atten_date=StringVar()
         self.var_atten_attendance=StringVar()
 
-        img=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
-        img=img.resize((800,200),Image.ANTIALIAS)
-        self.photoimg=ImageTk.PhotoImage(img)
+        # img=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        # img=img.resize((800,200),Image.ANTIALIAS)
+        # self.photoimg=ImageTk.PhotoImage(img)
         
-        f_lbl=Label(self.root,image=self.photoimg)
-        f_lbl.place(x=0,y=0,width=800,height=200)
-        #second img
-        img1=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
-        img1=img1.resize((800,200),Image.ANTIALIAS)
-        self.photoimg1=ImageTk.PhotoImage(img1)
-        f_lbl=Label(self.root,image=self.photoimg1)
-        f_lbl.place(x=800,y=0,width=800,height=200)
+        # f_lbl=Label(self.root,image=self.photoimg)
+        # f_lbl.place(x=0,y=0,width=800,height=200)
+        # #second img
+        # img1=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        # img1=img1.resize((800,200),Image.ANTIALIAS)
+        # self.photoimg1=ImageTk.PhotoImage(img1)
+        # f_lbl=Label(self.root,image=self.photoimg1)
+        # f_lbl.place(x=800,y=0,width=800,height=200)
 
-        img3=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
-        img3=img3.resize((1530,710),Image.ANTIALIAS)
-        self.photoimg3=ImageTk.PhotoImage(img3)
+        # img3=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        # img3=img3.resize((1530,710),Image.ANTIALIAS)
+        # self.photoimg3=ImageTk.PhotoImage(img3)
 
-        bg_img=Label(self.root,image=self.photoimg3)
-        bg_img.place(x=0,y=130,width=1530,height=710)
+        # bg_img=Label(self.root,image=self.photoimg3)
+        # bg_img.place(x=0,y=130,width=1530,height=710)
 
-        title_lbl=Label(bg_img,text="ATTENDANCE MANAGEMENT SYSTEM",font=("times new roman",35,"bold"),bg="white",fg="green")
+        title_lbl=Label(text="ATTENDANCE MANAGEMENT SYSTEM",font=("times new roman",35,"bold"),bg="white",fg="blue")
         title_lbl.place(x=0,y=0,width=1530,height=45)
 
-        main_frame=Frame(bg_img,bd=2,bg="white")
+        main_frame=Frame(bd=2,bg="white")
         main_frame.place(x=20,y=50,width=1480,height=600)
 
         left_frame=LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Attendance Details",font=("times new roman",12,"bold"))
         left_frame.place(x=10,y=10,width=775,height=580)
-        img_left=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        img_left=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\Attendance2.jpeg")
         img_left=img_left.resize((760,130),Image.ANTIALIAS)
         self.photoimg_left=ImageTk.PhotoImage(img_left)
 
@@ -100,7 +100,7 @@ class Attendance:
         attendanceLabel=Label(left_inside_frame,text="Attendance Status",bg="white",font="comicsansns 11 bold")
         attendanceLabel.grid(row=3,column=0)
 
-        self.atten_status=ttk.Combobox(left_inside_frame,width=20,textvariable=self.var_atten_id,font="comicsansns 11 bold",state="readonly")
+        self.atten_status=ttk.Combobox(left_inside_frame,width=20,textvariable=self.var_atten_attendance,font="comicsansns 11 bold",state="readonly")
         self.atten_status["values"]=("Status","Present","Absent")
         self.atten_status.grid(row=3,column=1,pady=8)
         self.atten_status.current(0)
