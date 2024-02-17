@@ -33,7 +33,7 @@ class Face_Recognition:
         # f_lbl=Label(self.root,image=self.photoimg_right)
         # f_lbl.place(x=650,y=55,width=950,height=700)
 
-        img_top=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        img_top=Image.open("C:\\Users\\HP\\Downloads\\attend-me-master\\attend-me-master\\images\\bg2.jpg")
         img_top=img_top.resize((1500,800),Image.ANTIALIAS)
         self.photoimg_top=ImageTk.PhotoImage(img_top)
 
@@ -45,9 +45,9 @@ class Face_Recognition:
         b1_1=Button(f_lbl,text="Face Recognition",command=self.face_recog,cursor="hand2",font=("times new roman",18,"bold"),bg="red",fg="white")
         b1_1.place(x=550,y=420,width=400,height=50)
 
-        #============================attendamce=============
+        #============================attendance=============
     def mark_attendance(self,i,r,n,d):
-        with open("Bvit.csv","r+",newline="\n") as f:
+        with open("vpp.csv","r+",newline="\n") as f:
             myDataList=f.readlines()
             name_list=[]
             for line in myDataList:

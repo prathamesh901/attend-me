@@ -16,7 +16,7 @@ class Train:
         title_lbl=Label(self.root,text="TRAIN DATA SET",font=("times new roman",35,"bold"),bg="white",fg="darkblue")
         title_lbl.place(x=0,y=0,width=1530,height=45)
 
-        img_top=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        img_top=Image.open("C:\\Users\\HP\\Downloads\\attend-me-master\\attend-me-master\\images\\bg2.jpg")
         img_top=img_top.resize((1500,800),Image.ANTIALIAS)
         self.photoimg_top=ImageTk.PhotoImage(img_top)
 
@@ -26,7 +26,7 @@ class Train:
         b1_1=Button(self.root,text="TRAIN DATA",command=self.train_classifier,cursor="hand2",font=("times new roman",30,"bold"),bg="green",fg="white")
         b1_1.place(x=500,y=380,width=500,height=60)
 
-        # img_bottom=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        # img_bottom=Image.open("C:\\Users\\HP\\Downloads\\attend-me-master\\attend-me-master\\images\\bg2.jpg")
         # img_bottom=img_bottom.resize((1530,325),Image.ANTIALIAS)
         # self.photoimg_bottom=ImageTk.PhotoImage(img_bottom)
 

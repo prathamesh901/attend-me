@@ -9,6 +9,7 @@ class Student:
     def __init__(self,root):
         self.root=root 
         self.root.geometry("1530x790+0+0")
+        self.root.title("Student")
       
 
         
@@ -29,7 +30,7 @@ class Student:
         self.var_teacher=StringVar()
 
         #baground img
-        img3=Image.open("C:\\Users\\Prathamesh\\Desktop\\attend me\\images\\bg2.jpg")
+        img3=Image.open("C:\\Users\\HP\\Downloads\\attend-me-master\\attend-me-master\\images\\bg2.jpg")
         img3=img3.resize((1500,800),Image.ANTIALIAS)
         self.photoimg3=ImageTk.PhotoImage(img3)
 
